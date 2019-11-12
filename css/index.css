@@ -1,0 +1,120 @@
+.home {
+  background-color: #0e1132;
+  color: white;
+}
+
+#fullpage {
+  transition-delay: 0.6s !important;
+}
+
+body {
+  background-color: #0e1132;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+.inverse-wave {
+  transform: rotate(180deg);
+  margin-top: -5px;
+}
+
+.wave-box {
+  position: absolute;
+  top: 100vh;
+  left: 100vw;
+  height: 250vh;
+  width: 200vw;
+  background-color: white;
+  transform: rotate(140deg);
+  z-index: 99;
+}
+
+#fp-nav:after {
+  content: " ";
+  width: 1px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50em;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: white;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 50;
+  right: 30px;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bar-menu {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 50rem;
+  transition: all 0.2s ease;
+}
+
+.menu-icon:hover .margin-lef-down {
+  margin-left: 6px !important;
+}
+
+.menu-icon:hover .margin-middle {
+  margin-left: -6px !important;
+}
+
+.margin-lef-down {
+  margin-left: -6px;
+}
+
+.margin-middle {
+}
+
+.home {
+  
+}
+
+.img-home {
+  width: 42vw;
+  height: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-redes {
+  width: 50vw;
+  height: auto;
+  position: relative;
+  left: 80%;
+  transform: translateX(-80%);
+}
+
+.texts {
+  width: 20%;
+  color: white;
+  position: absolute;
+  left: 15%;
+  top: 30%;
+}
+
+.img-acordo {
+  width: 40vw;
+  height: auto;
+  position: relative;
+  left: 80%;
+  transform: translateX(-80%);
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wave-box" id="waveBox"></div>
+    <div class="menu-icon">
+        <div class="bar-menu margin-lef-down"></div>
+        <div class="bar-menu margin-middle"></div>
+        <div class="bar-menu margin-lef-down"></div>
+    </div>
+    <div id="fullpage">
+        <div class="section home">
+            <img src="imgs/capa2.png" alt="" class="img-home">
+        </div>
+        <div class="section">
+            <div class="texts">
+                <h1>Serviços de rede</h1>
+                <p>Trabalhamos para maximizar o uso de sua rede de computadores.
+                    Cabeamentos estruturados, administração de redes, configuração de equipamentos e suporte remoto são
+                    alguns dos serviços que oferecemos para atender as necessidades de sua rede.</p>
+            </div>
+            <img src="imgs/undraw_server_down_s4lk.svg" alt="" class="img-redes">
+        </div>
+        <div class="section">
+            <div class="texts">
+                <h1>Sites e aplicativos</h1>
+                <p>Contamos com uma equipe capacitada para desenvolvimento de aplicativos sites dinâmicos e responsivos,
+                    com layouts
+                    desenvolvidos para diferentes dispositivos, como computadores, tablets e smartphones.</p>
+            </div>
+            <img src="imgs/undraw_web_devices_ad58.svg" alt="" class="img-redes">
+        </div>
+        <div class="section">
+            <div class="texts">
+                <h1>Suporte</h1>
+                <p>Oferecemos serviços de suporte a empresas.
+                    Atendimento personalizado conforme a necessidade de cada cliente.
+                    Serviços de backup, reparos eletrônicos, remoção de vírus, upgrade, update entre outros.
+                    Plataformas: Windows, Linux e Mac OS.</p>
+            </div>
+            <img src="imgs/undraw_instant_support_elxh.svg" alt="" class="img-redes">
+        </div>
+        <div class="section">
+            <div class="texts">
+                <h1>Contato</h1>
+                <p>Entre em contato com a gente e solicite uma avaliação pelo <br> Email: <br> atendimento@suldainfo.com.br ou
+                    por
+                    um dos nossos números
+                    <br>
+                    Telefones: <br> (48) 98657011 <br> (48) 33049095</p>
+            </div>
+            <img src="imgs/undraw_agreement_aajr.svg" alt="" class="img-acordo">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="dist/fullpage.js"></script>
+    <script type="text/javascript" src="dist/fullpage.extensions.min.js"></script>
+    <script>
+
+        var initEfectVar = false;
+        var completeEfectVar = false;
+
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                //options here
+                licenseKey: 'E240F6DD-B6B7468B-AB80F8F5-0C67DA64',
+                autoScrolling: true,
+                scrollHorizontally: true,
+                navigation: true,
+                navigationPosition: 'left',
+                onLeave: function () {
+                    if (initEfectVar) {
+                        effect();
+                    }
+                },
+                afterLoad: function () {
+                    if (initEfectVar) {
+                        completeEffect();
+                        console.warn('olaaa');
+                    } else {
+                        initEfectVar = true;
+                    }
+                }
+            });
+
+            //methods
+            $.fn.fullpage.setAllowScrolling(true);
+        });
+
+        function effect() {
+            var left = $('#waveBox').offset().left;  // Get the calculated left position
+            var top = $('#waveBox').offset().top;
+
+            $("#waveBox").css({ left: left, top: top })  // Set the left to its calculated position
+                .animate({ "left": "-50vw", "top": "-50vh" }, 700);
+        }
+
+        function completeEffect() {
+            setTimeout(() => {
+                var left = $('#waveBox').offset().left;  // Get the calculated left position
+                var top = $('#waveBox').offset().top;
+
+                $("#waveBox").css({ left: left, top: top })  // Set the left to its calculated position
+                    .animate({ "left": "-300vw", "top": "-300vh" }, 600, function () { $(this).removeAttr('style'); });
+            }, 400);
+        }
+    </script>
+</body>
+
+</html>
